@@ -1,13 +1,381 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.root,
+#root,
+#docs-root {
+  --lightTurquoise: #b3e8e5;
+  --darkTurquoise: #2f8f9d;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #b3e8e5;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #2f8f9d;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.component_container {
+  @apply w-full md:h-screen flex flex-row;
+}
+
+.component_container_wrapper {
+  @apply flex justify-center items-center flex-1 w-full h-full flex-col 2xl:py-0 py-20;
+  /* p-? */
+}
+
+.app_social {
+  @apply flex justify-end items-center flex-col p-[1rem];
+}
+
+.app_social div {
+  @apply flex justify-center items-center transition-all duration-300 ease-in-out w-[40px] h-[40px] rounded-[50%] bg-white my-1 border-solid border-gray-300 border-[1px] hover:bg-darkTurquoise hover:border-darkTurquoise;
+}
+
+.app_social div a {
+  @apply w-full h-full rounded-[50%] flex justify-center items-center hover:text-white;
+}
+
+.app_social div svg {
+  @apply w-[20px] h-[20px] text-gray-500 hover:text-white;
+}
+
+.app_navigation {
+  @apply flex justify-center items-center flex-col p-4;
+}
+
+.app_navigation_dot {
+  @apply w-[10px] h-[10px] rounded-[50%] bg-[#cbcbcb] m-2 hover:bg-darkTurquoise;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Navbar Classes */
+
+.app_navbar {
+  @apply w-full flex justify-between items-center px-8 py-4 bg-[#ffffff40] backdrop-blur-[4px] border-solid border-[1px] border-[#ffffff2e] fixed z-[2];
+}
+
+.app_navbar_logo {
+  @apply flex justify-start items-center;
+}
+
+.app_navbar_logo h1 {
+  @apply text-darkTurquoise;
+}
+
+.app_navbar_links {
+  @apply flex-1 flex justify-center items-center list-none;
+}
+
+.app_navbar_links li {
+  @apply mx-4 cursor-pointer flex-col;
+}
+
+.app_navbar_links li div {
+  @apply w-full h-0.5 bg-transparent mb-1.5;
+}
+
+.app_navbar_links li a {
+  @apply text-gray-400 no-underline flex-col uppercase font-[400] transition-all duration-300 ease-in-out hover:text-darkTurquoise;
+}
+
+#menu {
+  @apply z-[2];
+}
+
+#menu-bar {
+  @apply w-[45px] h-[40px] mt-[30px] mr-[20px] mb-[20px];
+}
+
+.bar {
+  @apply h-[5px] w-full bg-darkTurquoise block rounded-[5px] ease-in-out duration-300;
+}
+
+#bar1 {
+  @apply translate-y-[-4px];
+}
+
+#bar3 {
+  @apply translate-y-[4px];
+}
+
+.nav {
+  @apply hidden duration-300 ease-in-out;
+}
+
+.nav ul {
+  @apply px-[20px];
+}
+
+.nav li {
+  @apply list-none py-[12px];
+}
+
+.nav li a {
+  @apply text-white text-[20px] no-underline;
+}
+
+.nav li a:hover {
+  @apply text-lightTurquoise;
+}
+
+.menu-bg,
+#menu {
+  @apply absolute top-0 right-0;
+}
+
+.menu-bg {
+  @apply z-[1] w-0 h-0 mt-[30px] mr-[20px] mb-[20px] rounded-[50%] duration-300 ease-in-out;
+  background: radial-gradient(
+    circle,
+    var(--darkTurquoise),
+    var(--darkTurquoise)
+  );
+}
+
+.change {
+  @apply block;
+}
+
+.change .bar {
+  @apply bg-white;
+}
+
+.change #bar1 {
+  transform: translateY(4px) rotateZ(-45deg);
+}
+
+.change #bar2 {
+  @apply opacity-0;
+}
+
+.change #bar3 {
+  transform: translateY(-6px) rotateZ(45deg);
+}
+
+.change-bg {
+  @apply w-[520px] h-[560px];
+  transform: translate(60%, -30%);
+}
+
+/* Header Classes */
+
+.header {
+  @apply flex-1 w-full h-screen flex-row md:pt-[4rem] md:px-[2rem] my-20; /* ? */
+}
+
+.header_information {
+  @apply flex md:flex-[0.65] gap-10 md:flex-row items-center justify-center flex-col;
+}
+
+.header_information div {
+  @apply flex flex-col gap-[2rem] w-3/4 md:w-1/2 max-h-[80vh] text-left m-0;
+}
+
+.header_information div span {
+  @apply text-darkTurquoise;
+}
+
+.header_information div h1 {
+  @apply md:text-center 2xl:text-5xl text-3xl font-bold mt-auto;
+}
+
+.header_information div h3 {
+  @apply 2xl:text-2xl text-lg;
+}
+
+.header_information div p {
+  @apply 2xl:text-lg text-sm mb-auto text-gray-600;
+}
+
+.header_info_img {
+  @apply w-full flex justify-center items-center flex-col m-[2rem];
+}
+
+.header_info_img img {
+  @apply md:w-[70%] md:h-[70%] w-[90%] h-[90%] rounded-[15px] object-cover;
+}
+
+/* About Classes*/
+
+.about {
+  @apply flex-1 flex flex-col items-center justify-center w-full h-screen bg-white;
+}
+
+.about h2 {
+  @apply text-2xl md:text-5xl font-[800] text-center text-black capitalize md:pt-0 pt-10;
+}
+
+.about span {
+  @apply text-darkTurquoise;
+}
+
+.about_items {
+  @apply flex justify-center items-start flex-wrap mt-8 md:pb-0 pb-10;
+}
+
+.about_items_item {
+  @apply flex flex-col justify-start items-start w-[200px] m-8;
+}
+
+.about_items_item img {
+  @apply w-full h-[170px] rounded-[15px] object-cover;
+}
+
+.about_items_item h3 {
+  @apply text-[1rem] font-[800] text-black text-left;
+}
+
+.about_items_item p {
+  @apply text-[0.8rem] text-left text-gray-700 leading-6;
+}
+
+/* Works Classes */
+
+.work {
+  @apply md:mt-0 mt-10;
+}
+
+.work_title {
+  @apply text-2xl md:text-5xl font-[800] text-center text-black capitalize;
+}
+
+.work_title span {
+  @apply text-darkTurquoise;
+}
+
+.work_items {
+  @apply grid md:grid-cols-3 grid-cols-1 justify-center items-center md:pb-0 pb-10;
+}
+
+.work_items_item {
+  @apply flex justify-center items-center flex-col m-8 p-4 rounded-[0.5rem] bg-white text-black cursor-pointer hover:shadow;
+  transition: all 0.3s ease;
+}
+
+.work_items_item_img {
+  @apply relative w-full h-[230px];
+}
+
+.work_items_item_img img {
+  @apply flex justify-center items-center w-full h-full rounded-[0.5rem] object-cover;
+}
+
+.work_items_item_hover {
+  @apply flex justify-center items-center absolute top-0 bottom-0 left-0 right-0 w-full h-full bg-[#00000080] rounded-[0.5rem] opacity-0;
+  transition: all 0.3s ease;
+}
+
+.work_items_item_hover div {
+  @apply w-[50px] h-[50px] rounded-full bg-[#00000080] text-white m-4 font-sans font-[800] cursor-pointer;
+  transition: all 0.3s ease;
+}
+
+.work_items_item_hover div svg {
+  @apply w-1/2 h-1/2 text-white;
+}
+
+.work_items_item_content {
+  @apply flex justify-center items-center p-2 w-full relative flex-col;
+}
+
+.work_items_item_content h4 {
+  @apply mt-4 leading-6;
+}
+
+.work_items_item_content p {
+  @apply mt-2.5;
+}
+
+/* Skills Classes */
+
+.skills {
+  @apply bg-white flex justify-center items-center flex-1 w-full flex-col my-10;
+}
+
+.skills_title {
+  @apply text-2xl md:text-5xl font-[800] text-center text-black capitalize md:pt-0 pt-10;
+}
+
+.skills_container {
+  @apply w-4/5 mt-[5rem] flex flex-row md:pb-0 pb-10;
+}
+
+.skills_list {
+  @apply flex-1 flex flex-wrap justify-center items-center;
+}
+
+.skills_list_item {
+  @apply flex justify-center items-center flex-col text-center m-4;
+  transition: all 0.3s ease;
+}
+
+.skills_list_item div {
+  @apply w-[80px] h-[80px] sm:w-[130px] sm:h-[130px] rounded-[50%] bg-white hover:shadow;
+}
+
+.skills_list_item div img {
+  @apply w-1/2 h-1/2;
+}
+
+.skills_list_item p {
+  @apply font-[500] mt-2;
+}
+
+/* contact Classes */
+
+.contact {
+  @apply flex flex-col gap-10 bg-white h-auto w-full;
+}
+
+.contact_title {
+  @apply text-xl md:text-3xl 2xl:text-5xl font-[800] text-center text-black capitalize md:pt-0 pt-10;
+}
+
+.contact_title span {
+  @apply text-darkTurquoise;
+}
+
+.contact_form {
+  @apply flex flex-col justify-center items-center gap-5 h-full w-3/4 self-center;
+}
+
+.contact_form div {
+  @apply w-full md:w-1/2 h-[40px] rounded-[10px] cursor-pointer bg-darkTurquoise hover:shadow;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact_form div input {
+  @apply h-full w-full p-4 border-none rounded-lg bg-lightTurquoise font-sans text-darkTurquoise outline-none;
+}
+
+.contact_form div textarea {
+  @apply h-[170px] w-full p-4 border-none rounded-lg bg-lightTurquoise font-sans text-darkTurquoise outline-none;
+}
+
+.contact_form button {
+  @apply mt-32 py-4 px-8 rounded-[10px] border-none bg-darkTurquoise font-[500] text-white outline-none font-sans cursor-pointer;
 }

@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar/Navbar";
+import Header from "./components/Header";
+import ComponentWrapper from "./components/ComponentWrapper";
+import About from "./components/About";
+import Works from "./components/Works/Works";
+import Skills from "./components/Skills/Skills";
+import Contact from "./components/Contact";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <ComponentWrapper idName="header" bgColor="#b3e8e5">
+        <Header />
+      </ComponentWrapper>
+      <ComponentWrapper idName="about" bgColor="#ffffff">
+        <About />
+      </ComponentWrapper>
+      <ComponentWrapper idName="work" bgColor="#b3e8e5">
+        <Works />
+      </ComponentWrapper>
+      <ComponentWrapper idName="skills" bgColor="#ffffff">
+        <Skills />
+      </ComponentWrapper>
+      <ComponentWrapper idName="contact" bgColor="#ffffff">
+        <Contact />
+      </ComponentWrapper>
     </div>
   );
-}
+};
 
 export default App;
