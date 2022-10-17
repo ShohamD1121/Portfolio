@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
 
 const Contact: React.FC = () => {
   const form: any = useRef();
@@ -21,7 +22,12 @@ const Contact: React.FC = () => {
   const handleSubmit = () => {
     setLoading(true);
     emailjs
-      .sendForm("gmail", "template_1c5vtrr", form.current, "i4Ma9iw8nDyzcYwQ0")
+      .sendForm(
+        "service_xne7jxb",
+        "template_1c5vtrr",
+        form.current,
+        "i4Ma9iw8nDyzcYwQ0"
+      )
       .then(
         (result) => {
           console.log(result.text);
@@ -74,10 +80,13 @@ const Contact: React.FC = () => {
           </button>
         </form>
       ) : (
-        <div>
-          <h3 style={{ marginTop: "4rem" }}>
+        <div className="contact_message_sent">
+          <motion.h3
+            transition={{ ease: "linear", duration: 2, repeat: Infinity }}
+            animate={{ y: [15, -15, 15]}}
+          >
             Thank You For <span> Getting In Touch! </span>
-          </h3>
+          </motion.h3>
         </div>
       )}
     </div>

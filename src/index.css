@@ -184,7 +184,7 @@ code {
 /* Header Classes */
 
 .header {
-  @apply flex-1 w-full h-screen flex-row md:pt-[4rem] md:px-[2rem] my-20; /* ? */
+  @apply flex-1 w-full h-screen flex-row md:pt-[4rem] md:px-[2rem] mt-10 mb-20;
 }
 
 .header_information {
@@ -216,7 +216,7 @@ code {
 }
 
 .header_info_img img {
-  @apply md:w-[70%] md:h-[70%] w-[90%] h-[90%] rounded-[15px] object-cover;
+  @apply 2xl:w-[50%] 2xl:h-[50%] md:w-[70%] md:h-[70%] w-[90%] h-[90%] rounded-[15px] object-cover;
 }
 
 /* About Classes*/
@@ -299,15 +299,15 @@ code {
 }
 
 .work_items_item_content {
-  @apply flex justify-center items-center p-2 w-full relative flex-col;
+  @apply flex justify-center items-center p-2 w-full relative flex-col md:mt-0 mt-16;
 }
 
 .work_items_item_content h4 {
-  @apply mt-4 leading-6;
+  @apply font-bold mt-4 leading-6;
 }
 
 .work_items_item_content p {
-  @apply mt-2.5;
+  @apply text-gray-600 mt-2.5;
 }
 
 /* Skills Classes */
@@ -352,7 +352,7 @@ code {
 }
 
 .contact_title {
-  @apply text-xl md:text-3xl 2xl:text-5xl font-[800] text-center text-black capitalize md:pt-0 pt-10;
+  @apply text-xl md:text-3xl 2xl:text-5xl font-[800] text-center text-black capitalize md:pt-0 pt-10 px-8;
 }
 
 .contact_title span {
@@ -373,9 +373,17 @@ code {
 }
 
 .contact_form div textarea {
-  @apply h-[170px] w-full p-4 border-none rounded-lg bg-lightTurquoise font-sans text-darkTurquoise outline-none;
+  @apply h-[170px] w-full p-4 border-none rounded-lg bg-lightTurquoise font-sans text-darkTurquoise outline-none resize-none;
 }
 
 .contact_form button {
   @apply mt-32 py-4 px-8 rounded-[10px] border-none bg-darkTurquoise font-[500] text-white outline-none font-sans cursor-pointer;
+}
+
+.contact_message_sent {
+  @apply text-center text-green-500 font-bold text-xl md:text-3xl 2xl:text-5xl capitalize md:pt-0 pt-10 px-8;
+}
+
+.contact_message_sent h3 {
+  @apply mt-[4rem];
 }
