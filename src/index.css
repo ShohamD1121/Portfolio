@@ -184,11 +184,11 @@ code {
 /* Header Classes */
 
 .header {
-  @apply flex-1 w-full h-screen flex-row md:pt-[4rem] md:px-[2rem] mt-10 mb-20;
+  @apply flex flex-1 w-full h-screen flex-row md:pt-[4rem] md:px-[2rem] mt-10 mb-20;
 }
 
 .header_information {
-  @apply flex md:flex-[0.65] gap-10 md:flex-row items-center justify-center flex-col;
+  @apply flex gap-10 md:flex-row items-center justify-center flex-col;
 }
 
 .header_information div {
