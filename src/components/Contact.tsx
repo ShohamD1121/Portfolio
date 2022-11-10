@@ -3,7 +3,7 @@ import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
 const Contact: React.FC = () => {
-  const form: any = useRef();
+  const form = useRef<any>();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,7 +14,9 @@ const Contact: React.FC = () => {
 
   const { name, email, message } = formData;
 
-  const handleChangeInput = (e: any) => {
+  const handleChangeInput = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -25,7 +27,7 @@ const Contact: React.FC = () => {
       .sendForm(
         "service_xne7jxb",
         "template_1c5vtrr",
-        form.current,
+        form?.current,
         "i4Ma9iw8nDyzcYwQ0"
       )
       .then(
@@ -38,7 +40,7 @@ const Contact: React.FC = () => {
           console.log(error.text);
         }
       );
-    form.current.reset();
+    form?.current.reset();
   };
 
   return (
@@ -83,7 +85,7 @@ const Contact: React.FC = () => {
         <div className="contact_message_sent">
           <motion.h3
             transition={{ ease: "linear", duration: 2, repeat: Infinity }}
-            animate={{ y: [15, -15, 15]}}
+            animate={{ y: [15, -15, 15] }}
           >
             Thank You For <span> Getting In Touch! </span>
           </motion.h3>

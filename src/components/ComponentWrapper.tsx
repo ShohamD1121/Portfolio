@@ -5,7 +5,7 @@ import NavigationDots from "../components/NavigationDots";
 import SocialMedia from "../components/SocialMedia";
 
 interface Props {
-  children: any;
+  children: JSX.Element;
   idName: string;
   bgColor: string;
 }
@@ -14,7 +14,11 @@ const ComponentWrapper: React.FC<Props> = ({ children, idName, bgColor }) => {
   const { width } = useWindowDimensions();
 
   return (
-    <div id={idName} className="component_container" style={{backgroundColor : bgColor}}>
+    <div
+      id={idName}
+      className="component_container"
+      style={{ backgroundColor: bgColor }}
+    >
       {width > 768 && <SocialMedia />}
       <motion.div
         whileInView={{ y: [-100, 0], opacity: [0, 0, 1] }}
