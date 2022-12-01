@@ -188,11 +188,11 @@ code {
 }
 
 .header_information {
-  @apply flex gap-10 md:flex-row items-center justify-center flex-col;
+  @apply flex flex-col md:flex-row items-center justify-center;
 }
 
-.header_information div {
-  @apply flex flex-col gap-[2rem] w-3/4 md:w-1/2 max-h-[80vh] text-left m-0;
+.header_information_info {
+  @apply flex flex-col gap-[2rem] w-3/4 md:w-full max-h-[80vh] text-left;
 }
 
 .header_information div span {

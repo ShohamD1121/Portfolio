@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import myImg from "../images/my_pic.jpg";
+// import myImg from "../images/my_pic.jpg";
+import TechCircles from "./TechCircles/TechCircles";
 
 const Header: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Header: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="header_information"
       >
-        <div className="">
+        <div className="header_information_info">
           <h1 className="header_title">
             Hey! Im <span>Shoham</span>
           </h1>
@@ -24,14 +25,9 @@ const Header: React.FC = () => {
             and adapt quickly to new environments.
           </p>
         </div>
-        <motion.div
-          whileInView={{ opacity: 0.5 }}
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.5, type: "tween" }}
-          className="header_info_img"
-        >
-          <img src={myImg} alt="my-img" />
-        </motion.div>
+        <div className="flex justify-center items-center w-full">
+          <TechCircles />
+        </div>
       </motion.div>
     </div>
   );
