@@ -1,16 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
-// import myImg from "../images/my_pic.jpg";
 import TechCircles from "./TechCircles/TechCircles";
 
 const Header: React.FC = () => {
   return (
     <div className="header">
-      <motion.div
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
-        className="header_information"
-      >
+      <div className="header_information">
         <div className="header_information_info">
           <h1 className="header_title">
             Hey! Im <span>Shoham</span>
@@ -28,7 +22,7 @@ const Header: React.FC = () => {
         <div className="flex justify-center items-center w-full">
           <TechCircles />
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
