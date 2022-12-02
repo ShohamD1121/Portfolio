@@ -13,21 +13,21 @@ const About: React.FC = () => {
     },
     {
       title: "Back End Development",
-      description: "Developing Server Side Using NodeJS ExpressJS, With SQL/NOSQL DataBases such as MongoDB and MySQL",
+      description:
+        "Developing Server Side Using NodeJS ExpressJS, With SQL/NOSQL DataBases such as MongoDB and MySQL",
       imgUrl: Server,
     },
   ];
 
   return (
     <div className="about">
-      <h2 >
+      <h2>
         I Make <span>Incredable Websites</span>
         <br /> with Passion <span> and Proficiency</span>
       </h2>
       <div className="about_items">
         {abouts.map((about, index) => (
           <motion.div
-            whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: "tween" }}
             className="about_items_item"

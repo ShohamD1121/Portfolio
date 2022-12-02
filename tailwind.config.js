@@ -7,6 +7,9 @@ module.exports = {
         lightTurquoise: "var(--lightTurquoise)",
         darkTurquoise: "var(--darkTurquoise)",
       },
+      screens: {
+        xs: { min: "425px" },
+      },
     },
   },
   plugins: [],

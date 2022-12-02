@@ -6,6 +6,7 @@ import About from "./components/About";
 import Works from "./components/Works/Works";
 import Skills from "./components/Skills/Skills";
 import Contact from "./components/Contact";
+import ProjectCards from "./components/ProjectCards/ProjectCards";
 
 const App: React.FC = () => {
   return (
@@ -25,6 +26,9 @@ const App: React.FC = () => {
       </ComponentWrapper>
       <ComponentWrapper idName="contact" bgColor="#ffffff">
         <Contact />
+      </ComponentWrapper>
+      <ComponentWrapper idName="cards" bgColor="#b3e8e5">
+        <ProjectCards />
       </ComponentWrapper>
     </div>
   );
