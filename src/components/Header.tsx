@@ -1,29 +1,39 @@
 import React from "react";
 import TechCircles from "./TechCircles/TechCircles";
+import { motion } from "framer-motion";
+import { container, item } from "../animations/animations";
 
 const Header: React.FC = () => {
   return (
-    <div className="header">
-      <div className="header_information">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="header"
+    >
+      <motion.div className="header_information">
         <div className="header_information_info">
-          <h1 className="header_title">
+          <motion.h1 variants={item} className="header_title">
             Hey! Im <span>Shoham</span>
-          </h1>
-          <h3 className="header_text">
+          </motion.h1>
+          <motion.h3 variants={item} className="header_text">
             A Full-Stack <span>Web Developer</span>
-          </h3>
-          <p className="header_desc">
+          </motion.h3>
+          <motion.p variants={item} className="header_desc">
             I'm a Self taught Full Stack Developer familiar with wide range of
             programming concepts and languages. a team player with excellent
             communication abilities, hard worker, Problem Solver, self-learner
             and adapt quickly to new environments.
-          </p>
+          </motion.p>
         </div>
-        <div className="flex justify-center items-center w-full">
+        <motion.div
+          variants={item}
+          className="flex justify-center items-center w-full"
+        >
           <TechCircles />
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

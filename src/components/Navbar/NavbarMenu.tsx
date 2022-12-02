@@ -22,7 +22,11 @@ const NavbarMenu: React.FC = () => {
         <nav className={`nav ${toggle ? "change" : ""}`} id="nav">
           <ul>
             {["header", "about", "work", "skills", "contact"].map((item) => (
-              <li className="uppercase" key={`link-${item}`}>
+              <li
+                onClick={menuOnClick}
+                className="uppercase"
+                key={`link-${item}`}
+              >
                 <div />
                 <a href={`#${item}`}>{item}</a>
               </li>

@@ -7,6 +7,11 @@ type Props = {
   angle: number;
 };
 
+const item = {
+  hidden: { scale: 0, opacity: 0 },
+  show: { scale: 1, opacity: 1 },
+};
+
 const TechCircle: React.FC<Props> = ({ img, angle }) => {
   const { width } = useWindowDimensions();
 
@@ -23,14 +28,13 @@ const TechCircle: React.FC<Props> = ({ img, angle }) => {
         width: frontR * 2 + "px",
         height: frontR * 2 + "px",
       }}
-      whileHover={{ scale: 1.2, rotate: -90 }}
+      whileHover={{ scale: 1.1, rotate: -90 }}
       whileTap={{
         scale: 0.8,
         rotate: -90,
         borderRadius: "100%",
       }}
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
+      variants={item}
       transition={{
         type: "spring",
         stiffness: 260,

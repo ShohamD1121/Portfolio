@@ -9,7 +9,9 @@ const Navbar: React.FC = () => {
     <div>
       <nav className="app_navbar">
         <div className="app_navbar_logo">
-          <h1 className={`${width < 768 && "mt-[8px]"}`}>Shoham Douek</h1>
+          <a href={`#header`}>
+            <h1 className={`${width < 768 && "mt-[8px]"}`}>Shoham Douek</h1>
+          </a>
         </div>
         {width > 768 && (
           <ul className="app_navbar_links">
