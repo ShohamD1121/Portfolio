@@ -321,7 +321,7 @@ code {
 }
 
 .skills_container {
-  @apply w-4/5 mt-[5rem] flex flex-row md:pb-0 pb-10;
+  @apply w-4/5 md:w-full mt-[5rem] flex flex-row md:pb-0 pb-10;
 }
 
 .skills_list {
