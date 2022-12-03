@@ -3,7 +3,7 @@ import { SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
-import { works } from "../Works/WorksData";
+import { works } from "./worksData";
 import { motion } from "framer-motion";
 
 const Card: React.FC = () => {

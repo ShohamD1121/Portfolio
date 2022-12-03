@@ -4,10 +4,10 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { EffectCards } from "swiper";
-import { works } from "../Works/WorksData";
+import { works } from "../OldWorks/WorksData";
 import { motion } from "framer-motion";
 
-const ProjectCards: React.FC = () => {
+const Works: React.FC = () => {
   return (
     <div className="flex flex-col justify-around items-center w-full min-h-[100vh] bg-lightTurquoise">
       <h2 className="work_title">
@@ -67,4 +67,4 @@ const ProjectCards: React.FC = () => {
   );
 };
 
-export default ProjectCards;
+export default Works;

@@ -391,7 +391,7 @@ code {
 /* swiper */
 
 .swiper {
-  @apply md:w-[320px] md:h-[400px] xs:w-[320px]  w-[90%] h-[90%];
+  @apply 2xl:h-[520px] md:w-[400px] md:h-[400px] xs:w-[320px]  w-[90%] h-[90%];
 }
 
 .swiper-slide {

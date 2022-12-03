@@ -3,10 +3,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header";
 import ComponentWrapper from "./components/ComponentWrapper";
 import About from "./components/About";
-import Works from "./components/Works/Works";
 import Skills from "./components/Skills/Skills";
 import Contact from "./components/Contact";
-import ProjectCards from "./components/ProjectCards/ProjectCards";
+import Works from "./components/Work/Works";
 
 const App: React.FC = () => {
   return (
@@ -26,9 +25,6 @@ const App: React.FC = () => {
       </ComponentWrapper>
       <ComponentWrapper idName="contact" bgColor="#ffffff">
         <Contact />
-      </ComponentWrapper>
-      <ComponentWrapper idName="cards" bgColor="#b3e8e5">
-        <ProjectCards />
       </ComponentWrapper>
     </div>
   );
