@@ -44,7 +44,6 @@ code {
 
 .component_container_wrapper {
   @apply flex justify-center items-center flex-1 w-full h-full flex-col 2xl:py-0 py-20;
-  /* p-? */
 }
 
 .app_social {
