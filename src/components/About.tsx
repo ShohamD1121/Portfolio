@@ -7,14 +7,13 @@ const About: React.FC = () => {
   const abouts = [
     {
       title: "Front End Development",
-      description:
-        "Devloping Interactive User Interfaces With ReactJS FrameWork.",
+      description: "Devloping Interactive User Interfaces With React.",
       imgUrl: ReactSvg,
     },
     {
       title: "Back End Development",
       description:
-        "Developing Server Side Using NodeJS ExpressJS, With SQL/NOSQL DataBases such as MongoDB and MySQL",
+        "Developing Server Side Using NestJS/NodeJS With SQL/NoSQL Databases.",
       imgUrl: Server,
     },
   ];

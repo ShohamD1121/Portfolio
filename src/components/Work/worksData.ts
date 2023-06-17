@@ -1,6 +1,8 @@
 import StockerImg from "../../images/stockerimg.png";
 import CountriesImg from "../../images/countries.png";
 import IpTrackerImg from "../../images/iptrackerimg.png";
+import RpsImg from "../../images/RPS.png";
+import BlogifyImg from "../../images/Blogify.png";
 
 export const works = [
   {
@@ -10,7 +12,24 @@ export const works = [
     codeLink: "https://github.com/ShohamD1121/StockerWebsite",
     title: "Stocker's App Landing Page",
     description:
-      "Landing Page for Smart stock picks mobile app that will be available on IOS and Android.",
+      "Landing Page for Stocker mobile app. Built with React, TypeScript",
+  },
+  {
+    name: "Blogify",
+    imgUrl: BlogifyImg,
+    projectLink: "https://github.com/ShohamD1121/Blogify",
+    codeLink: "https://github.com/ShohamD1121/Blogify",
+    title: "Blogify",
+    description:
+      " A place where you can post your blogs with ease and comfort.",
+  },
+  {
+    name: "Rock Paper Scissors Game",
+    imgUrl: RpsImg,
+    projectLink: "https://shohamd1121.github.io/RockPaperScissors/",
+    codeLink: "https://github.com/ShohamD1121/RockPaperScissors",
+    title: "Rock Paper Scissors",
+    description: "Play a game of rocker paper scissors",
   },
   {
     name: "Countries",

@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { EffectCards } from "swiper";
-import { works } from "../OldWorks/WorksData";
+import { works } from "./worksData";
 import { motion } from "framer-motion";
 import useWindowDimensions from "../../hooks/getWindowsDimensions";
 

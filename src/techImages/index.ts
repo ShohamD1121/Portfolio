@@ -4,14 +4,13 @@ import jsImg from "./javascript.png";
 import tsImg from "./typescript.png";
 import reactImg from "./React-icon.svg";
 import nodejsImg from "./node.png";
-import expressjsImg from "./express.svg";
 import mongodbImg from "./mongodb.svg";
-// import mysqlImg from "../images/mysql.svg";
+import nestImg from "./NestJS.svg";
 
 export const techImages: string[] = [
   reactImg,
   nodejsImg,
-  expressjsImg,
+  nestImg,
   mongodbImg,
   htmlImg,
   cssImg,

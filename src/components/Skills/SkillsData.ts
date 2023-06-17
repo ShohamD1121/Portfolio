@@ -8,6 +8,9 @@ import NodejsImg from "../../images/node.png";
 import ExpressjsImg from "../../images/express.svg";
 import MongoDBImg from "../../images/mongodb.svg";
 import MySQLImg from "../../images/mysql.svg";
+import NestJSImg from "../../images/NestJS.svg";
+import PostgresImg from "../../images/Postgres.svg";
+import DockerImg from "../../images/Docker.svg";
 
 export const skillsData = [
   {
@@ -51,6 +54,11 @@ export const skillsData = [
     bgColor: "#edf2f8",
   },
   {
+    name: "NestJS",
+    icon: NestJSImg,
+    bgColor: "#edf2f8",
+  },
+  {
     name: "MongoDB",
     icon: MongoDBImg,
     bgColor: "#edf2f8",
@@ -58,6 +66,16 @@ export const skillsData = [
   {
     name: "MySQL",
     icon: MySQLImg,
+    bgColor: "#edf2f8",
+  },
+  {
+    name: "PostgreSQL",
+    icon: PostgresImg,
+    bgColor: "#edf2f8",
+  },
+  {
+    name: "Docker",
+    icon: DockerImg,
     bgColor: "#edf2f8",
   },
 ];
