@@ -17,7 +17,7 @@ const Skills: React.FC = () => {
             >
               <div
                 className="flex justify-center items-center"
-                style={{ backgroundColor: skill.bgColor }}
+                style={{ backgroundColor: "#e2f2f8" }}
               >
                 <img src={skill.icon} alt={skill.name} />
               </div>
