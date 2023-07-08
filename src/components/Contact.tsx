@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
@@ -11,8 +11,16 @@ const Contact: React.FC = () => {
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [emailCount, setEmailCount] = useState(0);
 
   const { name, email, message } = formData;
+
+  useEffect(() => {
+    const storedEmailCount = localStorage.getItem("emailCount");
+    if (storedEmailCount) {
+      setEmailCount(Number(storedEmailCount));
+    }
+  }, []);
 
   const handleChangeInput = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -22,25 +30,45 @@ const Contact: React.FC = () => {
   };
 
   const handleSubmit = () => {
+    if (emailCount >= 3) {
+      // Check if the user has already sent 3 emails
+      alert("You have reached the maximum limit of emails.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      // Check if the user's email is valid
+      alert("Please enter a valid email address.");
+      return;
+    }
+
     setLoading(true);
     emailjs
       .sendForm(
-        "service_xne7jxb",
-        "template_1c5vtrr",
-        form?.current,
-        "i4Ma9iw8nDyzcYwQ0"
+        process.env.REACT_APP_SERVICE_ID ?? "",
+        process.env.REACT_APP_TEMPLATE_ID ?? "",
+        form.current,
+        process.env.REACT_APP_USER_ID
       )
       .then(
         (result) => {
           console.log(result.text);
           setLoading(false);
           setIsFormSubmitted(true);
+          setEmailCount((prevCount) => prevCount + 1);
+          localStorage.setItem("emailCount", String(emailCount + 1));
         },
         (error) => {
           console.log(error.text);
         }
       );
     form?.current.reset();
+  };
+
+  const validateEmail = (email: string) => {
+    const emailRegex =
+      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}))$/;
+    return emailRegex.test(email);
   };
 
   return (
